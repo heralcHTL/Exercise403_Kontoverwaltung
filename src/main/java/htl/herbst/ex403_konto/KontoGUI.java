@@ -11,11 +11,17 @@ package htl.herbst.ex403_konto;
  */
 public class KontoGUI extends javax.swing.JFrame {
 
+    UserListModel ulm = new UserListModel();
+    
     /**
      * Creates new form KontoGUI
      */
     public KontoGUI() {
         initComponents();
+        liUsers.setModel(ulm);
+        Account acc = new Account();
+        ulm.addUser(new User(acc, "Rich"));
+        ulm.addUser(new User(acc, "Alex"));
     }
 
     /**
@@ -28,28 +34,28 @@ public class KontoGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lbBalance = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        liUsers = new javax.swing.JList<>();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        taAccMove = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel3.setLayout(new java.awt.GridLayout());
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel1.setText("adf");
-        jPanel3.add(jLabel1);
+        lbBalance.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lbBalance.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lbBalance.setText("- €");
+        jPanel3.add(lbBalance);
 
         getContentPane().add(jPanel3, java.awt.BorderLayout.SOUTH);
 
         jPanel1.setLayout(new java.awt.GridLayout());
 
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(liUsers);
 
         jPanel1.add(jScrollPane1);
 
@@ -57,9 +63,9 @@ public class KontoGUI extends javax.swing.JFrame {
 
         jPanel2.setLayout(new java.awt.GridLayout());
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        taAccMove.setColumns(20);
+        taAccMove.setRows(5);
+        jScrollPane2.setViewportView(taAccMove);
 
         jPanel2.add(jScrollPane2);
 
@@ -111,13 +117,13 @@ public class KontoGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JList<Account> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel lbBalance;
+    private javax.swing.JList<Account> liUsers;
+    private javax.swing.JTextArea taAccMove;
     // End of variables declaration//GEN-END:variables
 }

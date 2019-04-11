@@ -11,13 +11,28 @@ package htl.herbst.ex403_konto;
  */
 public class User {
     private Account acc;
+    private String name;
 
-    public User(Account acc) {
+    public User(Account acc, String name) {
         this.acc = acc;
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
     
     public void withdraw(double sum){
         acc.withdraw(sum);
+    }
+    
+    public void deposit(double sum){
+        acc.deposit(sum);
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
     
 }
