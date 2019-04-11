@@ -40,7 +40,6 @@
               <Font name="Dialog" size="18" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="4"/>
-            <Property name="text" type="java.lang.String" value="- &#x20ac;"/>
           </Properties>
         </Component>
       </SubComponents>

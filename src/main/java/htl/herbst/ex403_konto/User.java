@@ -16,6 +16,7 @@ public class User {
     public User(Account acc, String name) {
         this.acc = acc;
         this.name = name;
+        this.acc.deposit(50);
     }
 
     public String getName() {

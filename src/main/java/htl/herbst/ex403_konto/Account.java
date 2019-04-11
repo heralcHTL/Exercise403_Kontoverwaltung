@@ -17,7 +17,7 @@ public class Account {
     }
     
     public void deposit(double sum){
-        balance -= sum;
+        balance += sum;
     }
 
     public double getBalance() {

@@ -22,6 +22,7 @@ public class KontoGUI extends javax.swing.JFrame {
         Account acc = new Account();
         ulm.addUser(new User(acc, "Rich"));
         ulm.addUser(new User(acc, "Alex"));
+        lbBalance.setText(acc.getBalance() + "€");
     }
 
     /**
@@ -48,7 +49,6 @@ public class KontoGUI extends javax.swing.JFrame {
 
         lbBalance.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lbBalance.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lbBalance.setText("- €");
         jPanel3.add(lbBalance);
 
         getContentPane().add(jPanel3, java.awt.BorderLayout.SOUTH);
